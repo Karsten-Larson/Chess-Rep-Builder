@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MrRedwing/Chess-Rep-Builder/static/css/main.80e81805.css",
+    "main.js": "/MrRedwing/Chess-Rep-Builder/static/js/main.0cbcf7e4.js",
+    "static/js/787.fb9c7072.chunk.js": "/MrRedwing/Chess-Rep-Builder/static/js/787.fb9c7072.chunk.js",
+    "index.html": "/MrRedwing/Chess-Rep-Builder/index.html",
+    "main.80e81805.css.map": "/MrRedwing/Chess-Rep-Builder/static/css/main.80e81805.css.map",
+    "main.0cbcf7e4.js.map": "/MrRedwing/Chess-Rep-Builder/static/js/main.0cbcf7e4.js.map",
+    "787.fb9c7072.chunk.js.map": "/MrRedwing/Chess-Rep-Builder/static/js/787.fb9c7072.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80e81805.css",
+    "static/js/main.0cbcf7e4.js"
+  ]
+}
