@@ -1,12 +1,12 @@
-import Chessground from "@react-chess/chessground";
-import { Link } from "react-router-dom";
-
 import ChessCard from "./ChessCard";
 
-import { Opening, BoardOrientation } from "./Types";
+import { Opening } from "./Types";
 
-function Train(props: { openings: Opening[]; setOpenings: any }) {
-  function Cards(): JSX.Element {
+const Train = (props: {
+  openings: Opening[];
+  setOpenings: (openings: Opening[]) => void;
+}) => {
+  const Cards = (): JSX.Element => {
     let output: JSX.Element[] = [];
 
     props.openings.forEach((opening) => {
@@ -23,7 +23,7 @@ function Train(props: { openings: Opening[]; setOpenings: any }) {
         {output}
       </div>
     );
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-blue-400">
@@ -37,6 +37,6 @@ function Train(props: { openings: Opening[]; setOpenings: any }) {
       <Cards />
     </div>
   );
-}
+};
 
 export default Train;

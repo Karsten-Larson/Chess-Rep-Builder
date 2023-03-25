@@ -1,4 +1,4 @@
-function About(): JSX.Element {
+const About = (): JSX.Element => {
   return (
     <div className="flex flex-col min-h-screen pb-8 bg-blue-400">
       <div className="content-center mx-auto my-12">
@@ -36,6 +36,6 @@ function About(): JSX.Element {
       </article>
     </div>
   );
-}
+};
 
 export default About;

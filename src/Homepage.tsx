@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hyperlink } from "./Types";
 
-import build from "./assets/build.svg";
-
 // Object that contains the links
 const hyperlinks: Hyperlink[] = [
   { name: "Builder", url: "/builder" },
@@ -10,7 +8,7 @@ const hyperlinks: Hyperlink[] = [
 ];
 
 // Generates the navigation buttons
-function PageButton(props: { hyperlink: Hyperlink }): JSX.Element {
+const PageButton = (props: { hyperlink: Hyperlink }): JSX.Element => {
   return (
     <Link to={props.hyperlink.url}>
       <div className="rounded-lg px-0 lg:py-52 py-24 bg-blue-100 hover:cursor-pointer hover:bg-blue-100 duration-500">
@@ -18,10 +16,10 @@ function PageButton(props: { hyperlink: Hyperlink }): JSX.Element {
       </div>
     </Link>
   );
-}
+};
 
 // Generates all buttons based on the length of the links
-function Buttons(): JSX.Element {
+const Buttons = (): JSX.Element => {
   let output: JSX.Element[] = [];
 
   hyperlinks.forEach((hyperlink) => {
@@ -33,14 +31,13 @@ function Buttons(): JSX.Element {
       {output}
     </div>
   );
-}
+};
 
 // Generates the homepage
-function Homepage(): JSX.Element {
+const Homepage = (): JSX.Element => {
   return (
     // Makes the component fill the whole screen, blue background
     <div className="flex flex-col min-h-screen bg-blue-400">
-      {/* Centers the title text */}
       <div className="content-center mx-auto my-12">
         <div className="rounded-lg bg-blue-100">
           <h1 className="text-center px-16 py-12 text-4xl">
@@ -49,10 +46,9 @@ function Homepage(): JSX.Element {
         </div>
       </div>
 
-      {/* Creates the buttons */}
       <Buttons />
     </div>
   );
-}
+};
 
 export default Homepage;

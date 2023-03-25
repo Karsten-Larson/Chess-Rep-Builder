@@ -10,8 +10,8 @@ const hyperlinks: Hyperlink[] = [
   { name: "About", url: "/about" },
 ];
 
-function Header(): JSX.Element {
-  function Option(props: { hyperlink: Hyperlink }): JSX.Element {
+const Header = (): JSX.Element => {
+  const Option = (props: { hyperlink: Hyperlink }): JSX.Element => {
     return (
       <div className="my-auto hover:underline hover:cursor-pointer">
         <Link to={props.hyperlink.url} onClick={() => setToggle(true)}>
@@ -19,7 +19,7 @@ function Header(): JSX.Element {
         </Link>
       </div>
     );
-  }
+  };
 
   let output: JSX.Element[] = [];
 
@@ -27,7 +27,8 @@ function Header(): JSX.Element {
     output.push(<Option hyperlink={hyperlink} />);
   });
 
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle]: [boolean, (toggle: boolean) => void] =
+    useState(true);
 
   return (
     <div>
@@ -57,6 +58,6 @@ function Header(): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

@@ -5,11 +5,11 @@ import { useState } from "react";
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { Opening, BoardOrientation } from "./Types";
 
-function Edit(props: {
+const Edit = (props: {
   openings: Opening[];
   changeOpenings: (opening: Opening, index: number) => void;
   deleteOpenings: (index: number) => void;
-}) {
+}) => {
   // Allows switching pages without link
   const navigate = useNavigate();
 
@@ -31,13 +31,16 @@ function Edit(props: {
   }
 
   // Aspects of the Opening that can be changed by the user
-  const [name, setName] = useState(opening.name);
-  const [fen, setFen] = useState(opening.fen);
-  const [pgn, setPgn] = useState(opening.pgn);
-  const [side, setSide] = useState(opening.side);
+  const [name, setName]: [string, (name: string) => void] = useState(
+    opening.name
+  );
+  const [fen, setFen]: [string, (fen: string) => void] = useState(opening.fen);
+  const [pgn, setPgn]: [string, (pgn: string) => void] = useState(opening.pgn);
+  const [side, setSide]: [BoardOrientation, (side: BoardOrientation) => void] =
+    useState(opening.side);
 
   // Displays the card along with all the input boxes and dropdowns
-  function Card(props: { opening: Opening }): JSX.Element {
+  const Card = (): JSX.Element => {
     return (
       <div className="rounded-lg bg-blue-100 w-2/3 lg:w-1/2 xl:w-1/3  m-auto select-none">
         <div className="mx-3 mt-2 text-center grid grid-cols-1 text-xl">
@@ -88,7 +91,7 @@ function Edit(props: {
         </div>
       </div>
     );
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-blue-400">
@@ -98,7 +101,7 @@ function Edit(props: {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-4 space-y-2 content-start pb-16">
-        <Card opening={opening} />
+        <Card />
         <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto">
           <Link to="/builder">
             <button
@@ -154,6 +157,6 @@ function Edit(props: {
       </div>
     </div>
   );
-}
+};
 
 export default Edit;

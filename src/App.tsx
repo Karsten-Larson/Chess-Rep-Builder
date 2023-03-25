@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 // Import of header and footer
 import Header from "./Header";
@@ -53,7 +53,7 @@ let opens: Opening[] = [
   },
 ];
 
-function App() {
+function App(): JSX.Element {
   // lambda function for the sorting of the openings array
   const sortByCreated = (a: Opening, b: Opening) => {
     const date1 = new Date(a.created);
@@ -92,7 +92,7 @@ function App() {
   }, [openings]);
 
   // function passed as a prop to change the opening from state
-  function changeOpenings(opening: Opening, index: number) {
+  function changeOpenings(opening: Opening, index: number): void {
     const updatedOpenings = [
       ...openings.slice(0, index),
       opening,
@@ -105,7 +105,7 @@ function App() {
   }
 
   // function passed as a prop to delete an opening from state
-  function deleteOpenings(index: number) {
+  function deleteOpenings(index: number): void {
     const updatedOpenings = [
       ...openings.slice(0, index),
       ...openings.slice(index + 1, openings.length),

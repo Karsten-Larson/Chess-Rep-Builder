@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 import ChessCard from "./ChessCard";
 
-function Builder(props: {
+const Builder = (props: {
   openings: Opening[];
   setOpenings: (a: Opening[]) => void;
-}): JSX.Element {
-  function Cards(): JSX.Element {
+}): JSX.Element => {
+  // generates all the cards on the builder screen
+  const Cards = (): JSX.Element => {
     let output: JSX.Element[] = [];
 
     props.openings.forEach((opening) => {
@@ -44,7 +45,7 @@ function Builder(props: {
         </Link>
       </div>
     );
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-blue-400">
@@ -58,6 +59,6 @@ function Builder(props: {
       <Cards />
     </div>
   );
-}
+};
 
 export default Builder;
