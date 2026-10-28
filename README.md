@@ -2,4 +2,4 @@
 
 Chess Rep Builder is a React App made to help train your chess openings.
 
-https://mrredwing.github.io/Chess-Rep-Builder/
+https://karsten-larson.github.io/Chess-Rep-Builder/
